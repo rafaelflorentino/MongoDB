@@ -1,4 +1,4 @@
-// Altera ou inseri o valor de população
+// Altera ou insere o valor de população
 db.estados.update({sigla: "SP"}, {$set: {populacao: 45340000}})
 
 // Consultar
