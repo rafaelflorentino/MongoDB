@@ -73,7 +73,7 @@ db.estados.find({populacao: {$exists: true}}).pretty()
 db.estados.find().skip(1) // Pula o 1 registro
 
 // Trazer valores e pular 1 vlor e limitar a 2 resustados
-db.estados.find().skip(1).limit(2) // limmita pra 2 registros
+db.estados.find().skip(1).limit(2) // limmita pra 2 registros 
 
 // Contar quantos elementos tem
 db.estados.count()
@@ -84,3 +84,35 @@ db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1 ,_id: 0}) // O id não vem
 
 // Trazer so o nome das cidades, de quem tem a sigla SP
 db.estados.find({sigla:"SP"}, {"cidades.nome": 1, _id: 0})
+
+// Comandos
+
+show collections // Mostra as collections.
+
+createcollection() // Cria uma collection, exemplo: db.createcollection("minhacolecao").
+
+db.posts.insertOne(object) // Cria uma collection posts com o objeto object.
+
+db.nome_da_colecao.find().pretty() // Mostra todos os dados de uma coleção, ex.:
+
+db.system.users.find().pretty().
+
+db.posts.find( {category: "News"} ) // Mostra os documentos da coleção com a categoria News.
+
+db.nome_da_colecao.insert() // Insere dados numa coleção, ex.: db.minhacolecao.insert(
+{ "_id" : 0, "site" : "terminal root", "url" : "terminalroot.com.br", "content" : "sobre
+mongodb" } ).
+
+db.nome_da_colecao.update( ) // Atualiza(update) dados em um documento, ex.:
+db.minhacolecao.update({'content’: mongodb'},{set:{'content':'mongodb para
+concursos’}}).
+
+db.nome_da_colecao.drop() // Deleta uma coleção, ex.: db.minhacolecao.drop().
+
+db.dados.remove({"mail": "james@brown.org"}) // Remove um documento com a chave mail igual a james@brown.org.
+
+db.collection.createIndex( {<fieldname>: (1| -1)}); // Cria índices em coleções.
+
+mongodump // Faz o backup.
+
+db.fornecedores.distinct("pais") // retorna os nomes sem repetição

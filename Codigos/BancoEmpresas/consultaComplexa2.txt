@@ -1,4 +1,4 @@
-// Pipeline só com 1 estagio, traz o estado e todas as cidades desse estado que possua a cidade sorocaba
+// Pipeline só com 1 estágio, traz o estado e todas as cidades desse estado que possua a cidade sorocaba
 db.estados.aggregate([
     { $match: {"cidades.nome": "Sorocaba" } },
 ])
